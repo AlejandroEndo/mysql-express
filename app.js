@@ -51,9 +51,8 @@ databse.connect(databse.MODE_PRODUCTION, function(err) {
 		var hostname = 'localhost';
 		var port = 3000;
 
-		app.listen(port, hostname, function() {
-			console.log('Servidor corriendo en http://' + hostname + ':' + port
-					+ '/');
+		app.listen(app.get('port'), function() {
+			console.log('Conectado en el puerto Aiuda');
 		});
 	}
 });
