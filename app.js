@@ -47,10 +47,6 @@ databse.connect(databse.MODE_PRODUCTION, function(err) {
 		process.exit(1)
 	} else {
 		// Si no hubo errores encender el servidor y comenzar a escuchar
-		// solicitudes
-		var hostname = 'localhost';
-		var port = 3000;
-
 		app.listen(app.get('port'), function() {
 			console.log('Conectado en el puerto Aiuda');
 		});
