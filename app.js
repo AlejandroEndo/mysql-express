@@ -37,7 +37,7 @@ app.use(express.static(__dirname + '/public'));
 // Configurar las rutas en archivos separados
 app.use('/users', userRouter);
 
-app.set('port', process.env.PORT || 8080);
+ var puerto = process.env.PORT || 8080;
 
 // Configurar la conexión a la base de datos
 databse.connect(databse.MODE_PRODUCTION, function(err) {
@@ -47,7 +47,7 @@ databse.connect(databse.MODE_PRODUCTION, function(err) {
 		process.exit(1)
 	} else {
 		// Si no hubo errores encender el servidor y comenzar a escuchar
-		app.listen(app.get('port'), function() {
+		app.listen(puerto, function() {
 			console.log('Conectado en el puerto Aiuda');
 		});
 	}
